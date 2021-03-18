@@ -2,8 +2,15 @@ require_relative 'car'
 require_relative 'parking'
 
 class ParkingManager
+
   def initialize
     @parking = Parking.new
+  end
+
+  def initialize(file)
+    @file = file
+    file_data = file.read
+    @parking = Parking.new(file_data.split("\n"))
   end
 
   def show_menu

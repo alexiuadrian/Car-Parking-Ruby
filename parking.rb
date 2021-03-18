@@ -4,6 +4,16 @@ class Parking
     @free_spots = 10
   end
 
+  def initialize(cars)
+    @cars = []
+    for car in cars
+      c = Car.new(car)
+      @cars.append(c)
+    end
+
+    @free_spots = 10 - @cars.length
+  end
+
   # Returns true if the car has been successfully added
   # Returns false otherwise
   def add_car(car)

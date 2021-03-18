@@ -1,7 +1,9 @@
 require_relative 'parking_manager'
 
-parking_manager = ParkingManager.new
+file = File.open('cars.txt', 'r')
 
-while parking_manager.show_menu
 
-end
+
+parking_manager = ParkingManager.new(file)
+
+while parking_manager.show_menu; end
